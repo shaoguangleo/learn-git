@@ -19,3 +19,17 @@ Git是一个专门用于做修改记录的程序，也被叫做**版本控制**�
 
 ##设定你的名字
 `git config --global user.name "<yourname>"`
+##设定你的邮箱
+`git config --global user.email "<youremail@example.com>"`
+
+#新建repo
+##repo
+repo可以理解为一个被跟踪的文件夹，其中的任何内容做的任何更改都会被记录在册。
+##新建一个repo
+比如我们的文件夹就叫做`hello-world`吧。
+执行下列指令：
+ - 新建文件夹`mkdir hello-world`
+ - 进入文件夹`cd hello-world`
+ - 初始化`git init`
+看看初始化成功没有，输入指令**git status**，只要不显示*fatal: Not a git repository...*，那就OK了。
+恭喜了，第一步成功了。
