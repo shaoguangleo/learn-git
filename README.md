@@ -1,5 +1,5 @@
 #我们编程吧 之 git 学习手册
-**Version 0.3 $at$ 2016.01.29**
+**Version 0.4 $at$ 2016.01.30**
 
 [TOC]
 
@@ -164,7 +164,7 @@ $ git push origin master
 
 #fork与clone
 
-
+![fork-clone](http://img.blog.csdn.net/20160130183043218)
 
 ##forks
 在上一节里面我们已经push了修改到github上，但如果只能这样，git未免太小儿科了，因为git最有趣的地方其实在于与不同的人来协作开发。
@@ -214,8 +214,12 @@ $ git remote add upstream https://github.com/shaoguangleo/learn-git.git
 ##分支
 **git**的软件**repo**使用分支**branches**来隔离开发进度。
 
+![branches](http://img.blog.csdn.net/20160130183120203)
+
 当我们需要与其他人一起共同开发的时候，在完成自己负责的那一部分程序前，最好是创建自己的分支，这样就可以让主分支**master**保持稳定，不被未修改的修改影响。当你完成了自己的那一部分，就可以使用**merge**将分支修改合并进入**mater**主分支中。
 
+
+![branch-details](http://img.blog.csdn.net/20160130183138392)
 
 #与github同步
 
