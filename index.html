@@ -22,7 +22,7 @@
       <h1>
 <a id="我们编程吧-之-git-学习手册" class="anchor" href="#%E6%88%91%E4%BB%AC%E7%BC%96%E7%A8%8B%E5%90%A7-%E4%B9%8B-git-%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>我们编程吧 之 git 学习手册</h1>
 
-<p><strong>Version 0.4 $at$ 2016.01.30</strong></p>
+<p><strong>Version 0.5</strong></p>
 
 <p>[TOC]</p>
 
@@ -321,6 +321,61 @@
 <p>当我们需要与其他人一起共同开发的时候，在完成自己负责的那一部分程序前，最好是创建自己的分支，这样就可以让主分支<strong>master</strong>保持稳定，不被未修改的修改影响。当你完成了自己的那一部分，就可以使用<strong>merge</strong>将分支修改合并进入<strong>mater</strong>主分支中。</p>
 
 <p><img src="http://img.blog.csdn.net/20160130183138392" alt="branch-details"></p>
+
+<h2>
+<a id="新建一个特性分支-1" class="anchor" href="#%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%89%B9%E6%80%A7%E5%88%86%E6%94%AF-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>新建一个特性分支</h2>
+
+<p>在终端中输入<code>git branch</code>可以查看你位于哪个分支上。</p>
+
+<p>此时我们开始着手新建一个分支吧，比如分支的名称是<code>sub-test</code>，那么此时使用命令</p>
+
+<pre><code>$ git branch sub-test
+</code></pre>
+
+<p>那么此时的<code>sub-test</code>分支降会拷贝当前<code>mater</code>的所有信息。</p>
+
+<p>不过记住此时我们只是新建了一个分支，而我们目前还在主分支，这个可以使用<code>git branch</code>命令来查看。那么现在我们就进入到我们新建的分支：</p>
+
+<pre><code>$ git checkout sub-test
+</code></pre>
+
+<p>再次输入<code>git branch</code>命令会发现我们已经位于sub-test分支了。</p>
+
+<p><img src="http://img.blog.csdn.net/20160202173800733" alt="git-branch"></p>
+
+<h2>
+<a id="在子分支开始开发" class="anchor" href="#%E5%9C%A8%E5%AD%90%E5%88%86%E6%94%AF%E5%BC%80%E5%A7%8B%E5%BC%80%E5%8F%91" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>在子分支开始开发</h2>
+
+<p>此时我们在位于sub-test分支里面新建一个文件吧。</p>
+
+<ul>
+<li>新建一个文件命名为hello-sub</li>
+<li>在文件里面写入<code>hello git</code>
+</li>
+</ul>
+
+<p>我们使用git将刚才的操作给记录下来：</p>
+
+<ol>
+<li>git status</li>
+<li>git add hello-sub</li>
+<li>git commit -m 'Add a new file in sub branch'</li>
+<li>git push origin <strong>sub-test</strong>
+</li>
+</ol>
+
+<p>第四步特别注意，一定是将origin推送到我们刚才新建的sub-test子分支中。
+并且在你提交的时候，git会提示你的修改已经提交到了一个新的分支。</p>
+
+<p><strong>小技巧</strong>一步搞定新建一个分支并进入该分支</p>
+
+<pre><code>$ git checkout -b new-sub
+</code></pre>
+
+<h2>
+<a id="与他人协作开发" class="anchor" href="#%E4%B8%8E%E4%BB%96%E4%BA%BA%E5%8D%8F%E4%BD%9C%E5%BC%80%E5%8F%91" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>与他人协作开发</h2>
+
+<p>其实最开始其他人员是没有push推送的权限的，这个时候我们如果希望大家协同开发，就需要在你的repo界面的右上方的setting那里，设置添加<strong>Collaborators</strong>，添加的人员就具有了直接参与推送的权限。</p>
 
 <h1>
 <a id="与github同步" class="anchor" href="#%E4%B8%8Egithub%E5%90%8C%E6%AD%A5" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>与github同步</h1>
