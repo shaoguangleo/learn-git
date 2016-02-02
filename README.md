@@ -1,5 +1,5 @@
 #我们编程吧 之 git 学习手册
-**Version 0.4 $at$ 2016.01.30**
+**Version 0.5**
 
 [TOC]
 
@@ -218,8 +218,52 @@ $ git remote add upstream https://github.com/shaoguangleo/learn-git.git
 
 当我们需要与其他人一起共同开发的时候，在完成自己负责的那一部分程序前，最好是创建自己的分支，这样就可以让主分支**master**保持稳定，不被未修改的修改影响。当你完成了自己的那一部分，就可以使用**merge**将分支修改合并进入**mater**主分支中。
 
-
 ![branch-details](http://img.blog.csdn.net/20160130183138392)
+
+##新建一个特性分支
+在终端中输入`git branch`可以查看你位于哪个分支上。
+
+此时我们开始着手新建一个分支吧，比如分支的名称是`sub-test`，那么此时使用命令
+
+```
+$ git branch sub-test
+```
+那么此时的`sub-test`分支降会拷贝当前`mater`的所有信息。
+
+不过记住此时我们只是新建了一个分支，而我们目前还在主分支，这个可以使用`git branch`命令来查看。那么现在我们就进入到我们新建的分支：
+
+```
+$ git checkout sub-test
+```
+再次输入`git branch`命令会发现我们已经位于sub-test分支了。
+
+![git-branch](http://img.blog.csdn.net/20160202173800733)
+
+##在子分支开始开发
+此时我们在位于sub-test分支里面新建一个文件吧。
+
+ - 新建一个文件命名为hello-sub
+ - 在文件里面写入`hello git`
+
+我们使用git将刚才的操作给记录下来：
+
+ 1. git status
+ 2. git add hello-sub
+ 3. git commit -m 'Add a new file in sub branch'
+ 4. git push origin **sub-test**
+
+第四步特别注意，一定是将origin推送到我们刚才新建的sub-test子分支中。
+并且在你提交的时候，git会提示你的修改已经提交到了一个新的分支。
+
+**小技巧**一步搞定新建一个分支并进入该分支
+
+```
+$ git checkout -b new-sub
+```
+
+##与他人协作开发
+其实最开始其他人员是没有push推送的权限的，这个时候我们如果希望大家协同开发，就需要在你的repo界面的右上方的setting那里，设置添加**Collaborators**，添加的人员就具有了直接参与推送的权限。
+
 
 #与github同步
 
@@ -231,3 +275,4 @@ $ git remote add upstream https://github.com/shaoguangleo/learn-git.git
 Hi，XDJM们，更多信息欢迎移步[我的github](https://github.com/shaoguangleo)或微信公众号letsProgramming.
 
 ![letsProgramming](http://img.blog.csdn.net/20160128231400788)
+
