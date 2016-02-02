@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Learn-git by shaoguangleo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Learn-git</h1>
+      <h2 class="project-tagline">Will teach you how to learn git</h2>
+      <a href="https://github.com/shaoguangleo/learn-git" class="btn">View on GitHub</a>
+      <a href="https://github.com/shaoguangleo/learn-git/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/shaoguangleo/learn-git/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="我们编程吧-之-git-学习手册" class="anchor" href="#%E6%88%91%E4%BB%AC%E7%BC%96%E7%A8%8B%E5%90%A7-%E4%B9%8B-git-%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>我们编程吧 之 git 学习手册</h1>
+
+<p><strong>Version 0.4 $at$ 2016.01.30</strong></p>
+
+<p>[TOC]</p>
+
+<h1>
+<a id="git-简介" class="anchor" href="#git-%E7%AE%80%E4%BB%8B" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Git 简介</h1>
+
+<p>Git是一个开源的软件，作者是大名鼎鼎的<strong>Linus Torvalds</strong>，写出<strong>Linux</strong>的那个哥们。</p>
+
+<p>Git是一个专门用于做修改记录的程序，也被叫做<strong>版本控制</strong>软件。</p>
+
+<h2>
+<a id="安装git" class="anchor" href="#%E5%AE%89%E8%A3%85git" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>安装Git</h2>
+
+<p>这个很简单。</p>
+
+<ul>
+<li>Windows用户，参考<a href="windows.github.com">github@windows</a>
+</li>
+<li>Mac用户，参考<a href="mac.github.com">github@MacOSX</a>
+<em>Git不像别的软件，安装完成后不会在桌面上有个logo什么的，直接终端操作</em>
+</li>
+</ul>
+
+<h2>
+<a id="设置git" class="anchor" href="#%E8%AE%BE%E7%BD%AEgit" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>设置Git</h2>
+
+<h3>
+<a id="查看git版本" class="anchor" href="#%E6%9F%A5%E7%9C%8Bgit%E7%89%88%E6%9C%AC" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>查看git版本</h3>
+
+<p>在终端中输入<code>git --version</code>，比如我的输出为：</p>
+
+<blockquote>
+<p>git version 2.7.0</p>
+</blockquote>
+
+<p>下面的设置主要是告诉git是哪位大神在用<em>git</em>。</p>
+
+<h3>
+<a id="设定你的名字" class="anchor" href="#%E8%AE%BE%E5%AE%9A%E4%BD%A0%E7%9A%84%E5%90%8D%E5%AD%97" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>设定你的名字</h3>
+
+<p><code>git config --global user.name "&lt;yourname&gt;"</code></p>
+
+<h3>
+<a id="设定你的邮箱" class="anchor" href="#%E8%AE%BE%E5%AE%9A%E4%BD%A0%E7%9A%84%E9%82%AE%E7%AE%B1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>设定你的邮箱</h3>
+
+<p><code>git config --global user.email "&lt;youremail@example.com&gt;"</code></p>
+
+<h1>
+<a id="新建repo" class="anchor" href="#%E6%96%B0%E5%BB%BArepo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>新建repo</h1>
+
+<h2>
+<a id="repo" class="anchor" href="#repo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>repo</h2>
+
+<p>repo可以理解为一个被跟踪的文件夹，其中的任何内容做的任何更改都会被记录在册。</p>
+
+<h2>
+<a id="新建一个repo" class="anchor" href="#%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AArepo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>新建一个repo</h2>
+
+<p>比如我们的文件夹就叫做<code>hello-world</code>吧。
+执行下列指令：</p>
+
+<ul>
+<li>新建文件夹<code>mkdir hello-world</code>
+</li>
+<li>进入文件夹<code>cd hello-world</code>
+</li>
+<li>初始化<code>git init</code>
+</li>
+</ul>
+
+<p>看看初始化成功没有，输入指令<strong>git status</strong>，只要不显示<em>fatal: Not a git repository...</em>，那就OK了。</p>
+
+<p>恭喜了，第一步成功了。</p>
+
+<h1>
+<a id="新增提交更改" class="anchor" href="#%E6%96%B0%E5%A2%9E%E6%8F%90%E4%BA%A4%E6%9B%B4%E6%94%B9" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>新增提交更改</h1>
+
+<h2>
+<a id="新建一个文件" class="anchor" href="#%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>新建一个文件</h2>
+
+<p>假设现在在刚才建立的文件<code>hello-world</code>中，如果没有就妥妥滴进来。</p>
+
+<p>新建一个文件，比如<code>vim readme</code>，然后输入一些简单的内容，比如</p>
+
+<blockquote>
+<p>hello git.</p>
+</blockquote>
+
+<h2>
+<a id="查看git状态" class="anchor" href="#%E6%9F%A5%E7%9C%8Bgit%E7%8A%B6%E6%80%81" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>查看git状态</h2>
+
+<p>这里我们可以检查目前repo的各种状态，比如是否有过任何修改，命令为：</p>
+
+<blockquote>
+<p>git status</p>
+</blockquote>
+
+<p>此时的输出应该是类似下面这个样子：</p>
+
+<p><img src="http://img.blog.csdn.net/20160128224205307" alt="git status"></p>
+
+<h2>
+<a id="新增文件" class="anchor" href="#%E6%96%B0%E5%A2%9E%E6%96%87%E4%BB%B6" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>新增文件</h2>
+
+<p>此时我们就可以将readme文件添加到档案库里面去了。</p>
+
+<blockquote>
+<p>git add readme</p>
+</blockquote>
+
+<p><strong>小技巧</strong>如果当前文件较多，可以是用<strong>git add .</strong>来一股脑地把所有的文件都给新增了。</p>
+
+<p>此时的输出应该是这个样子：</p>
+
+<p><img src="http://img.blog.csdn.net/20160128225130107" alt="git-add"></p>
+
+<h2>
+<a id="提交文件" class="anchor" href="#%E6%8F%90%E4%BA%A4%E6%96%87%E4%BB%B6" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>提交文件</h2>
+
+<blockquote>
+<p>git commit -m "Adding a readme file"</p>
+</blockquote>
+
+<p>此时的输出应该是如下这个样子：</p>
+
+<p><img src="http://img.blog.csdn.net/20160128225204654" alt="git-commit"></p>
+
+<h2>
+<a id="修改文件查看移动" class="anchor" href="#%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E6%9F%A5%E7%9C%8B%E7%A7%BB%E5%8A%A8" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>修改文件查看移动</h2>
+
+<p>在readme文件中新增一行，此时是用命令：</p>
+
+<blockquote>
+<p>git diff</p>
+</blockquote>
+
+<p>可以看到如下输出结果：</p>
+
+<p><img src="http://img.blog.csdn.net/20160128225553471" alt="git-diff"></p>
+
+<h1>
+<a id="注册github账号" class="anchor" href="#%E6%B3%A8%E5%86%8Cgithub%E8%B4%A6%E5%8F%B7" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>注册github账号</h1>
+
+<h2>
+<a id="还在本地" class="anchor" href="#%E8%BF%98%E5%9C%A8%E6%9C%AC%E5%9C%B0" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>还在本地</h2>
+
+<p>其实到目前为止，你的代码还滞留在你自己的机器上，别人无法看到<em>（黑客除外）</em>。</p>
+
+<p>此时我们就需要注册一个github账号，把自己优雅的代码共享给全世界。</p>
+
+<h2>
+<a id="创建github账号" class="anchor" href="#%E5%88%9B%E5%BB%BAgithub%E8%B4%A6%E5%8F%B7" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>创建github账号</h2>
+
+<p>github是一个让所有人可以轻松上传自己代码，并协作的版本控制网站。
+移步<a href="https://github.com">github</a>。</p>
+
+<p>注册完后，此时还记得如何设置自己的用户名吗，参考<strong>设置git</strong>。</p>
+
+<h1>
+<a id="连接本机与远端repo" class="anchor" href="#%E8%BF%9E%E6%8E%A5%E6%9C%AC%E6%9C%BA%E4%B8%8E%E8%BF%9C%E7%AB%AFrepo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>连接本机与远端repo</h1>
+
+<h2>
+<a id="远端repo" class="anchor" href="#%E8%BF%9C%E7%AB%AFrepo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>远端repo</h2>
+
+<p>当你在github上创建了一个repo后，所有同步到该repo的代码都会保存到github的主机服务器上。此时的这个repo就被称为remote repository，你每次把自己的更改push到这个repo，就叫做同步sync。</p>
+
+<p>其他人就可以通过pull你的这个remote repository来获取到你最新push的版本，存储到他们自己的电脑上。这样一来大家就可以共同的push、pull来协作修改同一个文件，而不用拿着U盘四处拷贝<code>省去病毒的传播，想当年去打印店的兄弟们...的U盘，哪个不是病毒缠身</code>。</p>
+
+<p>push、pull的示意图如下所示：</p>
+
+<p><img src="http://img.blog.csdn.net/20160129101421002" alt="remote-repo"></p>
+
+<h2>
+<a id="新建一个remote-repository" class="anchor" href="#%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AAremote-repository" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>新建一个remote repository</h2>
+
+<p>此时我们准备将电脑上的版本和存在<a href="https://github.com">github</a>的版本做同步，我们首先在github上新建一个repo。</p>
+
+<ul>
+<li>登陆<a href="https://github.com">github</a>，点击右上角的<code>+</code>号来新增一个repo</li>
+<li>取一个名字比如hello-world，并给个简短的说明</li>
+<li>设定为public</li>
+<li>不要勾选<code>initialize with a README</code>，因为我们是从本机创建的git</li>
+<li>暂时不需要修改.gitignore贺license的设置</li>
+<li>创建repo</li>
+</ul>
+
+<p>新建的地方在这里：</p>
+
+<p><img src="http://img.blog.csdn.net/20160129102457455" alt="new-repo"></p>
+
+<p>设置的东西在这里</p>
+
+<p><img src="http://img.blog.csdn.net/20160129102737570" alt="这里写图片描述"></p>
+
+<h2>
+<a id="readmegitignore和license" class="anchor" href="#readmegitignore%E5%92%8Clicense" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>README、gitignore和License</h2>
+
+<p>一般在开源的软件中，都会看到这几个文件，含义如下：</p>
+
+<ul>
+<li>README：通常用来解释一个程序的功能、安装及使用方法及一些贡献者等等</li>
+<li>gitignore：这个主要是告诉git在更新文件的时候忽略掉那些不用跟踪的文件</li>
+<li>License：用来声明一个程序可以或不可以被怎样使用</li>
+</ul>
+
+<h2>
+<a id="连接本地的repo和remote的repo" class="anchor" href="#%E8%BF%9E%E6%8E%A5%E6%9C%AC%E5%9C%B0%E7%9A%84repo%E5%92%8Cremote%E7%9A%84repo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>连接本地的repo和remote的repo</h2>
+
+<p>先在我们已经在GitHub 上新建了一个repository，在github的官网的右上角可以看到如下图所示的一个地址，我们这里选择https。</p>
+
+<p><img src="http://img.blog.csdn.net/20160129104302810" alt="git-https"></p>
+
+<p>然后进入hello-world文件夹</p>
+
+<pre><code>$ git remote add origin &lt;your-git-repo-website&gt;
+</code></pre>
+
+<p>现在我们的电脑本地repo就知道了在github上有一个remote repo，叫做<strong>origin</strong>，当然这个名字是可以修改的。此时origin代表的就是长长的那个网址。</p>
+
+<h2>
+<a id="推送push修改到github上" class="anchor" href="#%E6%8E%A8%E9%80%81push%E4%BF%AE%E6%94%B9%E5%88%B0github%E4%B8%8A" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>推送push修改到github上</h2>
+
+<p>接下来我们来推送一些本地的修改到github上的repo，因为我们总是希望本地的和github上的内容保持同步。</p>
+
+<p>在推送之前，说下其实git有一个<strong>branch</strong>系统，可以修改一个程序不同的功能，后面会有介绍。通常系统会给我们的<strong>branch</strong>一个最初的名字<strong>master</strong>。</p>
+
+<p>在我们需要推送的时候，需要告诉<strong>git</strong>准备推送哪一个分支的进度。</p>
+
+<p>此时我们把我们的主分支<strong>master</strong>推送过去。</p>
+
+<pre><code>$ git push origin master
+</code></pre>
+
+<p>完成后，直接登录<strong>github</strong>的<strong>hello-world</strong>的<strong>repo</strong>页面，看看你创建的第一个repo吧。</p>
+
+<h1>
+<a id="fork与clone" class="anchor" href="#fork%E4%B8%8Eclone" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>fork与clone</h1>
+
+<p><img src="http://img.blog.csdn.net/20160130183043218" alt="fork-clone"></p>
+
+<h2>
+<a id="forks" class="anchor" href="#forks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>forks</h2>
+
+<p>在上一节里面我们已经push了修改到github上，但如果只能这样，git未免太小儿科了，因为git最有趣的地方其实在于与不同的人来协作开发。</p>
+
+<p>当你fork一个程序的repo时，其实是复制了一份软件的repo到你自己的github账号下面。</p>
+
+<p><img src="http://img.blog.csdn.net/20160129154020223" alt="git-fork"></p>
+
+<p>然后我们就可以在这个基础上来做一些开发了，比如新增一些功能、修正一些错误。</p>
+
+<p>当我们成功fork一个repo后，我们就可以将它从github下载clone到我们自己的电脑上，这样在没有网络的情况下，我们也可以修改软件的内容。</p>
+
+<h2>
+<a id="下载clone我们刚刚fork的repo" class="anchor" href="#%E4%B8%8B%E8%BD%BDclone%E6%88%91%E4%BB%AC%E5%88%9A%E5%88%9Afork%E7%9A%84repo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>下载Clone我们刚刚fork的repo</h2>
+
+<p>现在我们就可以将刚刚fork的repo下载到本地了，方法很简单：</p>
+
+<pre><code>$ git clone https://github.com/yourname/learn-git
+</code></pre>
+
+<p>，但是要比较留意，千万不要在已经是一个repo的文件夹里面来clone。</p>
+
+<p>比如现在我们可能还在文件夹hello-world中，那么使用<code>cd ..</code>，到上一级目录，然后在执行clone的命令即可 。</p>
+
+<p>完成后，直接使用<code>cd learn-git</code>进入到刚刚下载的软件目录里面去。</p>
+
+<p>此时我们就拥有了一份这个软件的副本，并自动将其链接到了你github账号下面的远程repo中。</p>
+
+<h2>
+<a id="链接到原始的repo中" class="anchor" href="#%E9%93%BE%E6%8E%A5%E5%88%B0%E5%8E%9F%E5%A7%8B%E7%9A%84repo%E4%B8%AD" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>链接到原始的repo中</h2>
+
+<p><img src="http://img.blog.csdn.net/20160129161048376" alt="question"></p>
+
+<p>到这里就有个问题了，我们是<strong>fork</strong>了别人的<strong>repo</strong>，但是如果别人的<strong>repo</strong>更新了，我们<strong>fork</strong>的<strong>repo</strong>是无法同步更新的。</p>
+
+<p>而我们还是希望更新的，那么这个时候我们就需要新增另外一个remote来链接到原始的repo中，比如原始的repo位于<code>github.com/shaoguangleo/learn-git</code>上，该repo的地址可以在右上角找到。</p>
+
+<p>先在我们起个名字，比如大家常用的upstream，执行下面的命令：</p>
+
+<pre><code>$ git remote add upstream https://github.com/shaoguangleo/learn-git.git
+</code></pre>
+
+<p>此时我们就通过upstream与原始的repo建立了链接。</p>
+
+<h1>
+<a id="新建一个特性分支" class="anchor" href="#%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%89%B9%E6%80%A7%E5%88%86%E6%94%AF" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>新建一个特性分支</h1>
+
+<h2>
+<a id="分支" class="anchor" href="#%E5%88%86%E6%94%AF" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>分支</h2>
+
+<p><strong>git</strong>的软件<strong>repo</strong>使用分支<strong>branches</strong>来隔离开发进度。</p>
+
+<p><img src="http://img.blog.csdn.net/20160130183120203" alt="branches"></p>
+
+<p>当我们需要与其他人一起共同开发的时候，在完成自己负责的那一部分程序前，最好是创建自己的分支，这样就可以让主分支<strong>master</strong>保持稳定，不被未修改的修改影响。当你完成了自己的那一部分，就可以使用<strong>merge</strong>将分支修改合并进入<strong>mater</strong>主分支中。</p>
+
+<p><img src="http://img.blog.csdn.net/20160130183138392" alt="branch-details"></p>
+
+<h1>
+<a id="与github同步" class="anchor" href="#%E4%B8%8Egithub%E5%90%8C%E6%AD%A5" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>与github同步</h1>
+
+<h1>
+<a id="pr" class="anchor" href="#pr" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PR</h1>
+
+<h1>
+<a id="更多信息" class="anchor" href="#%E6%9B%B4%E5%A4%9A%E4%BF%A1%E6%81%AF" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>更多信息</h1>
+
+<p>Hi，XDJM们，更多信息欢迎移步<a href="https://github.com/shaoguangleo">我的github</a>或微信公众号letsProgramming.</p>
+
+<p><img src="http://img.blog.csdn.net/20160128231400788" alt="letsProgramming"></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/shaoguangleo/learn-git">Learn-git</a> is maintained by <a href="https://github.com/shaoguangleo">shaoguangleo</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
