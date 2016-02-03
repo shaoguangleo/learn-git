@@ -1,5 +1,5 @@
 #我们编程吧 之 git 学习手册
-**Version 0.5**
+**Version 1.0**
 
 [TOC]
 
@@ -264,15 +264,62 @@ $ git checkout -b new-sub
 ##与他人协作开发
 其实最开始其他人员是没有push推送的权限的，这个时候我们如果希望大家协同开发，就需要在你的repo界面的右上方的setting那里，设置添加**Collaborators**，添加的人员就具有了直接参与推送的权限。
 
+![collaborators](http://img.blog.csdn.net/20160203123408479)
 
 #与github同步
 
+经常使用**pull**来同步更新，对于和许多人协作的repo而言，可以有效避免修改相同的文件造成版本的冲突。
+
+```
+$git pull <REMOTE-NAME> <LOCAL-BRANCH-NAME>
+```
+
+效果如下所示，直接从服务器远端更新到本地。
+
+```
+REMOTE       ---->    LOCAL
+```
+
+为了确保**pull**到东西，可以先行检查**remote**是否有所变动
+
+```
+$ git fetch --dry-run
+```
+
 #PR
 
+这个设计不得不说，很赞。
 
+对于我们修改或者完善了一份fork来的repo，通常希望把这些修改发给原作者，希望原作者可以pull收取我们的request，让大家都可以看到。
+
+![pull-request](http://img.blog.csdn.net/20160203125525441)
+
+操作步骤如下所示：
+
+ - 点击**New pull request**
+ - 选择修改的分支
+ - 输入修改的内容以及描述信息
+ - 点击**Send pull request**
+
+#合并
+
+此时，我们就可以将我们的分支merge合并到主分支，删除旧的分支，并从upstream获得更新得到最新数据。
+
+ - 切换到主分支，`git checkout master`
+ - 合并子分支，`git merge sub-test`
+ - 删除功能分支，`git branch -d sub-test`
+ - 从github上删除该子分支，`git push <REMOTE-NAME> --delete <BRANCH-NAME>`
+ - 从原来的repo获取更新，`git pull upstream master`
+
+----------
 
 #更多信息
-Hi，XDJM们，更多信息欢迎移步[我的github](https://github.com/shaoguangleo)或微信公众号letsProgramming.
+Hi，XDJM们，更多信息欢迎移步[github](https://github.com/shaoguangleo)、[CSDN](http://blog.csdn.net/shaoguangleo)或微信公众号letsProgramming.
 
 ![letsProgramming](http://img.blog.csdn.net/20160128231400788)
+
+
+----------
+
+
 
