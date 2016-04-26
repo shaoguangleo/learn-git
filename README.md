@@ -9,7 +9,7 @@ Git是一个开源的软件，作者是大名鼎鼎的**Linus Torvalds**，写�
 Git是一个专门用于做修改记录的程序，也被叫做**版本控制**软件。
 
 ## 安装Git
-这个很简单。
+这个很简单，对于Windows和MacOSX还有对应的GUI版本可以使用。
 
  - Windows用户，参考[github@windows](windows.github.com)
  - Mac用户，参考[github@MacOSX](mac.github.com)
@@ -26,6 +26,8 @@ Git是一个专门用于做修改记录的程序，也被叫做**版本控制**�
 `git config --global user.name "<yourname>"`
 ###设定你的邮箱
 `git config --global user.email "<youremail@example.com>"`
+###命令号颜色支持
+`git config --global color.ui auto`
 
 #新建repo
 ##repo
@@ -120,6 +122,15 @@ Peter Hutter 很好滴说明了提交信息的重要性
 可以看到如下输出结果：
 
 ![git-diff](http://img.blog.csdn.net/20160128225553471)
+
+##重构文件
+
+从工作目录和暂存区删除文件
+`git rm [filename]`
+从暂存区删除文件但保存在当地
+`git rm --cached [filename]`
+更改文件名并准备commit
+`git mv [filename-original] [file-renamed]`
 
 # 注册github账号
 ##还在本地
@@ -347,6 +358,10 @@ $ git fetch --dry-run
  - 删除功能分支，`git branch -d sub-test`
  - 从github上删除该子分支，`git push <REMOTE-NAME> --delete <BRANCH-NAME>`
  - 从原来的repo获取更新，`git pull upstream master`
+
+# 参考
+1. https://git-scm.com
+
 
 ----------
 
