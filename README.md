@@ -366,6 +366,28 @@ $ git checkout -b new-sub
 $ git branch -a
 ```
 
+### 删除远程分支和tag
+
+在较高版本的git上，可以使用这种语法删除远程分支：
+
+```
+$ git push origin --delete <branchName>
+```
+
+删除tag这么用：
+
+```
+git push origin --delete tag <tagname>
+```
+
+### 重命名本地分支：
+
+```
+git branch -m devel develop
+```
+
+
+
 ![branch -d](branch-d.png)
 
 ##与他人协作开发
