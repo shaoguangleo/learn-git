@@ -358,6 +358,16 @@ $ git checkout sub-test
 $ git checkout -b new-sub
 ```
 
+### 查看远程分支
+
+使用**-a**参数可以查看远程分支，远程分支用红色标示出来。
+
+```
+$ git branch -a
+```
+
+![branch -d](branch-d.png)
+
 ##与他人协作开发
 其实最开始其他人员是没有push推送的权限的，这个时候我们如果希望大家协同开发，就需要在你的repo界面的右上方的setting那里，设置添加**Collaborators**，添加的人员就具有了直接参与推送的权限。
 
@@ -421,6 +431,3 @@ Hi，XDJM们，更多信息欢迎移步[github](https://github.com/shaoguangleo)
 
 
 ----------
-
-
-
